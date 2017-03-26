@@ -4,21 +4,7 @@ port = "{{PORT}}"
 horizon = "{{BRIDGE_HORIZON_URL}}"
 network_passphrase = "Test SDF Network ; September 2015"
 api_key = "{{BRIDGE_API_KEY}}"
-mac_key = ""
-
-[[assets]]
-code="{{BRIDGE_ASSET_CODE}}"
-issuer="{{BRIDGE_ASSET_ISSUER}}"
 
 [database]
 type = "postgres"
 url = "{{DATABASE_URL}}"
-
-[accounts]
-authorizing_seed = "{{BRIDGE_AUTHORIZING_SEED}}"
-receiving_account_id = "{{BRIDGE_RECEIVING_ACCOUNT_ID}}"
-base_seed = "{{BRIDGE_BASE_SEED}}"
-
-[callbacks]
-receive = "{{RECEIVE_CALLBACK_URL}}"
-error = "{{ERROR_CALLBACK_URL}}"
