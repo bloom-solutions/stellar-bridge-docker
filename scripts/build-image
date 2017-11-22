@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This makes sure the script fails on the first failing command
+set -e
+
+docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+
+export REPO_NAME=bloomsolutions/stellar-bridge
+
+docker build --rm=false \
+  --tag=$REPO_NAME:latest \
+  --tag=$REPO_NAME:$TRAVIS_TAG \
+  .
+docker push $REPO_NAME:latest
+docker push $REPO_NAME:$TRAVIS_TAG
