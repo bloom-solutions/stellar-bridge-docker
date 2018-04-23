@@ -1,8 +1,7 @@
-FROM ubuntu:16.10
+FROM ubuntu:18.04
 MAINTAINER Ramon Tayag <ramon.tayag@gmail.com>
 
-RUN apt-get update -qq && \
-  apt-get upgrade -y && \
+RUN apt-get update && \
   apt-get install -y ca-certificates curl && \
   # Keep size small
   apt-get clean && \
@@ -12,7 +11,7 @@ ENV PATH=$APP_DIR:$PATH
 RUN mkdir $APP_DIR
 WORKDIR $APP_DIR
 
-ENV BRIDGE_VERSION=v0.0.28
+ENV BRIDGE_VERSION=v0.0.30
 ENV BRIDGE_BASENAME=bridge-$BRIDGE_VERSION-linux-amd64
 ENV BRIDGE_FILENAME=$BRIDGE_BASENAME.tar.gz
 
